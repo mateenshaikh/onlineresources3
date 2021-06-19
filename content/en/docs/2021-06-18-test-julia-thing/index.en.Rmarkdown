@@ -116,20 +116,38 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
 ```
 
 
-```{r,cache=F}
-languages = c("R","cpp","julia")
-boxplot(results,names=languages)
-print(results)
-medians = summary(results)[,"median"]
-names(medians)=languages
+{{< codes boxplot-base-r violinplot-ggplot2>}}
+  {{< code >}}
+  ```{r,cache=F}
+  languages = c("R","cpp","julia")
+  boxplot(results,names=languages)
+  ```
+    {{< /code >}}
 
-#speeds relative to r
-medians/max(medians)
+  {{< code >}}
+  ```{r,cache=F,message=F}
+  library(ggplot2)
+  languages = c("R","cpp","julia")
+  df=results
+  df$expr=languages
+  autoplot(df)
+  ```
+  {{< /code >}}
+{{< /codes >}}
 
-#speeds relative to julia
-medians/min(medians)
 
-```
+  ```{r,cache=F}
+  print(results)
+  medians = summary(results)[,"median"]
+  names(medians)=languages
+  
+  #speeds relative to r
+  medians/max(medians)
+  
+  #speeds relative to julia
+  medians/min(medians)
+  ```
+  
 
 
 

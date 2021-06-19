@@ -206,52 +206,72 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
 ```
 
 
+{{< codes boxplot-base-r violinplot-ggplot2>}}
+  {{< code >}}
+  
+  ```r
+  languages = c("R","cpp","julia")
+  boxplot(results,names=languages)
+  ```
+  
+  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+    {{< /code >}}
 
-```r
-languages = c("R","cpp","julia")
-boxplot(results,names=languages)
-```
+  {{< code >}}
+  
+  ```r
+  library(ggplot2)
+  languages = c("R","cpp","julia")
+  df=results
+  df$expr=languages
+  autoplot(df)
+  ```
+  
+  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+  {{< /code >}}
+{{< /codes >}}
 
-<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
-```r
-print(results)
-```
-
-```
-## Unit: milliseconds
-##                           expr      min        lq      mean    median        uq
-##                    getroot_r() 9.822416 10.662901 17.392439 10.862158 13.814915
-##                  getroot_cpp() 2.162216  2.302098  2.508816  2.671119  2.671496
-##  julia_eval("getroot_julia()") 1.724769  2.110986 37.723746  2.130844  2.185539
-##         max neval
-##   41.799807     5
-##    2.737151     5
-##  180.466593     5
-```
-
-```r
-medians = summary(results)[,"median"]
-names(medians)=languages
-
-#speeds relative to r
-medians/max(medians)
-```
-
-```
-##         R       cpp     julia 
-## 1.0000000 0.2459105 0.1961713
-```
-
-```r
-#speeds relative to julia
-medians/min(medians)
-```
-
-```
-##        R      cpp    julia 
-## 5.097585 1.253550 1.000000
-```
+  
+  ```r
+  print(results)
+  ```
+  
+  ```
+  ## Unit: milliseconds
+  ##                           expr      min       lq      mean   median       uq
+  ##                    getroot_r() 7.968633 7.978704 10.837992 8.206951 8.430759
+  ##                  getroot_cpp() 1.707683 1.708120  1.826795 1.714211 1.730400
+  ##  julia_eval("getroot_julia()") 1.139212 1.140584 24.453377 1.148334 1.284938
+  ##         max neval
+  ##   21.604915     5
+  ##    2.273563     5
+  ##  117.553818     5
+  ```
+  
+  ```r
+  medians = summary(results)[,"median"]
+  names(medians)=languages
+  
+  #speeds relative to r
+  medians/max(medians)
+  ```
+  
+  ```
+  ##         R       cpp     julia 
+  ## 1.0000000 0.2088731 0.1399221
+  ```
+  
+  ```r
+  #speeds relative to julia
+  medians/min(medians)
+  ```
+  
+  ```
+  ##        R      cpp    julia 
+  ## 7.146833 1.492781 1.000000
+  ```
+  
 
 
 

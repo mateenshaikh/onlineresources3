@@ -16,7 +16,7 @@ double getroot_cpp() {
 #include <Rcpp.h>
 // getroot_cpp
 double getroot_cpp();
-RcppExport SEXP sourceCpp_7_getroot_cpp() {
+RcppExport SEXP sourceCpp_9_getroot_cpp() {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
