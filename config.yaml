@@ -1,0 +1,41 @@
+baseURL: http://example.org
+title: Hugo Zdoc Theme
+theme: hugo-theme-zdoc
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: no
+hasCJKLanguage: no
+copyright: '&copy;{year}, All Rights Reserved'
+timeout: 10000
+enableEmoji: yes
+paginate: 13
+rssLimit: 100
+googleAnalytics: ''
+disableKinds: taxonomyTerm
+markup:
+  goldmark:
+    renderer:
+      hardWraps: yes
+      unsafe: yes
+      xHTML: yes
+  highlight:
+    codeFences: yes
+    lineNos: yes
+    lineNumbersInTable: yes
+    noClasses: no
+  tableOfContents:
+    endLevel: 4
+    ordered: no
+    startLevel: 2
+outputs:
+  home:
+    - HTML
+    - RSS
+    - SearchIndex
+outputFormats:
+  SearchIndex:
+    baseName: index
+    isPlainText: yes
+    mediaType: application/json
+    notAlternative: yes
+taxonomies:
+  tag: tags

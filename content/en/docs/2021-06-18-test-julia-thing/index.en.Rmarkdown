@@ -1,0 +1,135 @@
+---
+title: test julia thing
+author: ''
+date: '2021-06-18'
+slug: []
+categories: []
+tags: []
+weight: 5
+---
+
+```{r setup, include=FALSE}
+library(JuliaCall)
+knitr::opts_chunk$set(echo = TRUE,cache=T)
+knitr::knit_engines$set(julia = JuliaCall::eng_juliacall)
+```
+
+
+This documents the timings of a simple newton method in R, C (technically cpp but it's all just C code), and julia.
+
+The function is $f_0(x)=e^x+\sin(x)$ so the newton update would be
+$$x\leftarrow x-\frac{f_0(x)}{f_1(x)}=x-\frac{e^x+sin(x)}{e^x+cos(x)}$$
+
+applied repeatedly. A graph of the curve is shown below. It's already fairly linear so the function will hit the root very quickly but that's ok. 
+
+
+
+```{r,cache=T}
+curve(exp(x)+sin(x),-1,0)
+```
+We'll run the code a fixed number of iterations. I don't know if hitting 0 in the numerator does any short-cutting in any language but thats ok for now.
+
+
+### Julia code
+The julia is shown below. These lines are actually run in julia but at the end we'll call it from R, so the code will be revisted at the end.
+
+```{julia}
+f0(x)=exp(x)+sin(x)
+f1(x)=exp(x)+cos(x)
+update(x)=x-f0(x)/f1(x)
+function getroot_julia()
+  x=0.0
+    for i in 1:50000
+        x=update(x)
+    end
+    return x
+end
+
+
+using BenchmarkTools
+timing_julia = @benchmark getroot_julia() samples=5 evals=5
+print(timing_julia)
+```
+
+## R code
+The r code is shown below.
+
+```{r,cache=T}
+getroot_r=function(){
+  x=0.0
+  ee=0
+  for (i in 1:50000){
+    ee=exp(x)
+    x=x-(ee+sin(x))/(ee+cos(x))
+  }
+  return (x);
+}
+```
+
+## R cpp code
+
+This is the rcpp code is shown here
+
+```{Rcpp,cache=T}
+#include <Rcpp.h>
+using namespace Rcpp;
+
+//[[Rcpp::export]]
+double getroot_cpp() {
+  double x=0.0;
+  double ee=0.0;
+  for(int i=0;i<50000;i++){
+    ee=exp(x);
+    x=x-(ee+sin(x))/(ee+cos(x));
+  }
+  return (x);
+}
+```
+
+## julia
+The julia code (same as the code above) is entered into R so it can be called from R.
+
+```{r,cache=F,warning=F}
+library(JuliaCall)
+julia_command("f0(x)=exp(x)+sin(x)")
+julia_command("f1(x)=exp(x)+cos(x)")
+julia_command("update(x)=x-f0(x)/f1(x)")
+julia_command("function getroot_julia()
+    x=0.0
+    for i in 1:50000
+        x=update(x)
+    end
+    return x
+end")
+```
+
+# Results
+
+Now that all the functions are created and available, they're assessed in R. Each runs the same number of iterations with the same initial guess. Each language's implementation is run a few times times.
+
+
+
+
+```{r,cache=F}
+library(microbenchmark)
+results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()"),times=5)
+```
+
+
+```{r,cache=F}
+languages = c("R","cpp","julia")
+boxplot(results,names=languages)
+print(results)
+medians = summary(results)[,"median"]
+names(medians)=languages
+
+#speeds relative to r
+medians/max(medians)
+
+#speeds relative to julia
+medians/min(medians)
+
+```
+
+
+
