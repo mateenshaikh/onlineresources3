@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on ZDoc</title>
+    <link>/docs/</link>
+    <description>Recent content in Docs on ZDoc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sat, 11 Jan 2020 14:09:21 +0900</lastBuildDate>
+    
+        <atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Depth 1</title>
+        <link>/docs/depth1/</link>
+        <pubDate>Fri, 28 Feb 2020 10:08:56 +0900</pubDate>
+        
+        <guid>/docs/depth1/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Getting Started</title>
+        <link>/docs/gettingstarted/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>/docs/gettingstarted/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Content Management</title>
+        <link>/docs/contentmanagement/</link>
+        <pubDate>Tue, 28 Jan 2020 00:36:39 +0900</pubDate>
+        
+        <guid>/docs/contentmanagement/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Creating this site</title>
+        <link>/docs/2021-06-18-creating-this-page/</link>
+        <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/docs/2021-06-18-creating-this-page/</guid>
+        <description>This site is a combination of several tools including
+ Hugo (static websites) Github Lots of things from the Yihui universe (blogdown, rmarkdown, etc.). I know, I know it&amp;rsquo;s RStudio. netlify (recommended by the above, but github pages works too)  Make sure that the blogdown package is updated. Update Hugo if you need to.
+Netlify Make sure you create the appropriate github repo to deploy from. There aren’t subdomains like github pages.</description>
+      </item>
+      
+      <item>
+        <title>test julia thing</title>
+        <link>/docs/2021-06-18-test-julia-thing/</link>
+        <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/docs/2021-06-18-test-julia-thing/</guid>
+        <description>newton method This documents the timings of a simple newton method in R, C (technically cpp but it&amp;rsquo;s all just C code), and julia.
+the function used The function is \(f_0(x)=e^x+\sin(x)\) so the newton update would be
+$$x\leftarrow x-\frac{f_0(x)}{f_1(x)}=x-\frac{e^x+sin(x)}{e^x+cos(x)}$$
+applied repeatedly. A graph of the curve is shown below. It&amp;rsquo;s already fairly linear so the function will hit the root very quickly but that&amp;rsquo;s ok.
+1  curve(exp(x)+sin(x),-1,0)   the code We&amp;rsquo;ll run the code a fixed number of iterations.</description>
+      </item>
+      
+      <item>
+        <title>Related content</title>
+        <link>/docs/relatedcontent/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>/docs/relatedcontent/</guid>
+        <description>Markdown here</description>
+      </item>
+      
+      <item>
+        <title>Page Resources</title>
+        <link>/docs/pageresources/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:06 +0900</pubDate>
+        
+        <guid>/docs/pageresources/</guid>
+        <description>Markdown here</description>
+      </item>
+      
+      <item>
+        <title>Page Bundles</title>
+        <link>/docs/pagebundles/</link>
+        <pubDate>Tue, 28 Jan 2020 00:38:59 +0900</pubDate>
+        
+        <guid>/docs/pagebundles/</guid>
+        <description>Markdown here</description>
+      </item>
+      
+      <item>
+        <title>Content Formats</title>
+        <link>/docs/contentfortmats/</link>
+        <pubDate>Tue, 28 Jan 2020 00:38:51 +0900</pubDate>
+        
+        <guid>/docs/contentfortmats/</guid>
+        <description>Markdown here</description>
+      </item>
+      
+      <item>
+        <title>Image Processing</title>
+        <link>/docs/imageprocessing/</link>
+        <pubDate>Tue, 28 Jan 2020 00:38:48 +0900</pubDate>
+        
+        <guid>/docs/imageprocessing/</guid>
+        <description>Markdown here</description>
+      </item>
+      
+    
+  </channel>
+</rss>

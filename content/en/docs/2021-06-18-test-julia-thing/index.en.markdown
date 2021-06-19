@@ -10,9 +10,11 @@ weight: 5
 
 
 
+## newton method
 
 This documents the timings of a simple newton method in R, C (technically cpp but it's all just C code), and julia.
 
+### the function used
 The function is `\(f_0(x)=e^x+\sin(x)\)` so the newton update would be
 `$$x\leftarrow x-\frac{f_0(x)}{f_1(x)}=x-\frac{e^x+sin(x)}{e^x+cos(x)}$$`
 
@@ -26,83 +28,16 @@ curve(exp(x)+sin(x),-1,0)
 ```
 
 <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+
+## the code
+
 We'll run the code a fixed number of iterations. I don't know if hitting 0 in the numerator does any short-cutting in any language but thats ok for now.
 
-
-### Julia code
-The julia is shown below. These lines are actually run in julia but at the end we'll call it from R, so the code will be revisted at the end.
+Note that the julia code will be called within r (just like the rcpp is). For completeness the pure julia code is <a href="#rawjulia"> in the raw julia code </a>.
 
 
-```julia
-f0(x)=exp(x)+sin(x)
-```
-
-```
-## f0 (generic function with 1 method)
-```
-
-```julia
-f1(x)=exp(x)+cos(x)
-```
-
-```
-## f1 (generic function with 1 method)
-```
-
-```julia
-update(x)=x-f0(x)/f1(x)
-```
-
-```
-## update (generic function with 1 method)
-```
-
-```julia
-function getroot_julia()
-  x=0.0
-    for i in 1:50000
-        x=update(x)
-    end
-    return x
-end
-```
-
-```
-## getroot_julia (generic function with 1 method)
-```
-
-```julia
-
-
-using BenchmarkTools
-timing_julia = @benchmark getroot_julia() samples=5 evals=5
-```
-
-```
-## BenchmarkTools.Trial: 
-##   memory estimate:  0 bytes
-##   allocs estimate:  0
-##   --------------
-##   minimum time:     1.024 ms (0.00% GC)
-##   median time:      1.044 ms (0.00% GC)
-##   mean time:        1.042 ms (0.00% GC)
-##   maximum time:     1.053 ms (0.00% GC)
-##   --------------
-##   samples:          5
-##   evals/sample:     5
-```
-
-```julia
-print(timing_julia)
-```
-
-```
-## Trial(1.024 ms)
-```
-
-## R code
-The r code is shown below.
-
+{{< codes r cpp julia >}}
+  {{< code >}}
 
 ```r
 getroot_r=function(){
@@ -115,11 +50,10 @@ getroot_r=function(){
   return (x);
 }
 ```
+{{< /code >}}
 
-## R cpp code
 
-This is the rcpp code is shown here
-
+{{< code >}}
 
 ```cpp
 #include <Rcpp.h>
@@ -136,10 +70,8 @@ double getroot_cpp() {
   return (x);
 }
 ```
-
-## julia
-The julia code (same as the code above) is entered into R so it can be called from R.
-
+{{< /code >}}
+{{< code >}}
 
 ```r
 library(JuliaCall)
@@ -192,7 +124,14 @@ end")
 ## getroot_julia (generic function with 1 method)
 ```
 
-# Results
+{{< /code >}}
+{{< /codes >}}
+
+
+
+
+
+## results
 
 Now that all the functions are created and available, they're assessed in R. Each runs the same number of iterations with the same initial guess. Each language's implementation is run a few times times.
 
@@ -214,7 +153,7 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   boxplot(results,names=languages)
   ```
   
-  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-6-1.png" width="672" />
     {{< /code >}}
 
   {{< code >}}
@@ -227,7 +166,7 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   autoplot(df)
   ```
   
-  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" />
   {{< /code >}}
 {{< /codes >}}
 
@@ -240,13 +179,13 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   ```
   ## Unit: milliseconds
   ##                           expr      min       lq      mean   median       uq
-  ##                    getroot_r() 7.968633 7.978704 10.837992 8.206951 8.430759
-  ##                  getroot_cpp() 1.707683 1.708120  1.826795 1.714211 1.730400
-  ##  julia_eval("getroot_julia()") 1.139212 1.140584 24.453377 1.148334 1.284938
-  ##         max neval
-  ##   21.604915     5
-  ##    2.273563     5
-  ##  117.553818     5
+  ##                    getroot_r() 7.936465 8.000910 10.843673 8.139050 8.404150
+  ##                  getroot_cpp() 1.707158 1.711611  1.895882 1.719499 1.964071
+  ##  julia_eval("getroot_julia()") 1.172063 1.202188 24.513607 1.302336 1.501026
+  ##        max neval
+  ##   21.73779     5
+  ##    2.37707     5
+  ##  117.39042     5
   ```
   
   ```r
@@ -259,7 +198,7 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   
   ```
   ##         R       cpp     julia 
-  ## 1.0000000 0.2088731 0.1399221
+  ## 1.0000000 0.2112653 0.1600108
   ```
   
   ```r
@@ -269,9 +208,79 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   
   ```
   ##        R      cpp    julia 
-  ## 7.146833 1.492781 1.000000
+  ## 6.249578 1.320319 1.000000
   ```
   
 
 
 
+## the raw julia code {#rawjulia}
+The raw julia is shown below. These lines are actually run in julia but at the end we'll call it from R, so the code will be revisted at the end.
+
+
+```julia
+f0(x)=exp(x)+sin(x)
+```
+
+```
+## f0 (generic function with 1 method)
+```
+
+```julia
+f1(x)=exp(x)+cos(x)
+```
+
+```
+## f1 (generic function with 1 method)
+```
+
+```julia
+update(x)=x-f0(x)/f1(x)
+```
+
+```
+## update (generic function with 1 method)
+```
+
+```julia
+function getroot_julia()
+  x=0.0
+    for i in 1:50000
+        x=update(x)
+    end
+    return x
+end
+```
+
+```
+## getroot_julia (generic function with 1 method)
+```
+
+```julia
+
+
+using BenchmarkTools
+timing_julia = @benchmark getroot_julia() samples=5 evals=5
+```
+
+```
+## BenchmarkTools.Trial: 
+##   memory estimate:  0 bytes
+##   allocs estimate:  0
+##   --------------
+##   minimum time:     1.021 ms (0.00% GC)
+##   median time:      1.033 ms (0.00% GC)
+##   mean time:        1.036 ms (0.00% GC)
+##   maximum time:     1.071 ms (0.00% GC)
+##   --------------
+##   samples:          5
+##   evals/sample:     5
+```
+
+```julia
+print(timing_julia)
+```
+
+```
+## Trial(1.021 ms)
+```
