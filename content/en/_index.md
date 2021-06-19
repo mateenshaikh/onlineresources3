@@ -130,3 +130,5 @@ sections:
   type: normal
 title: Z Themes
 ---
+redirecting
+<meta http-equiv="refresh" content="0; URL='https://mateenshaikh3.netlify.app/'" />
