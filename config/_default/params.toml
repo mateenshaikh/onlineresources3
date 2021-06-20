@@ -1,5 +1,5 @@
 logo = true
-logoText = "ms"
+logoText = "ZDoc"
 logoType = "short" # long, short
 description = "The ZDoc theme for Hugo example site."
 
@@ -27,7 +27,7 @@ paginateWindow = 1
 taxoPaginate = 13
 taxoGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 
-github = "https://github.com/mateenshaikh/onlineresources3"
+github = "https://github.com/zzossig/hugo-theme-zdoc"
 
 # comment
 enableComment = false
