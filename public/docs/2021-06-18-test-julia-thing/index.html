@@ -1901,7 +1901,7 @@
   
   <li >
     
-      <a href="/" class="capitalize">Z Themes</a>
+      <a href="/" class="capitalize">home</a>
     
   </li>
   
@@ -2395,7 +2395,102 @@
 </div><p><img src="/docs/2021-06-18-test-julia-thing/index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <h2 id="the-code">the code</h2>
 <p>We&rsquo;ll run the code a fixed number of iterations. I don&rsquo;t know if hitting 0 in the numerator does any short-cutting in any language but thats ok for now.</p>
-<p>Note that the julia code will be called within r (just like the rcpp is). For completeness the pure julia code is <a href="#rawjulia"> in the raw julia code </a>.</p>
+<p>Note that the julia code will be called within r (just like the rcpp is). For completeness the pure julia code is collapsed below.<br />
+<div class="expand">
+  <button type="button" class="expand__button" aria-label="Expand Button">
+    <span class="expand-icon expand-icon__right">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12 9.29 8.12c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3c-.39.39-1.02.39-1.41 0-.38-.39-.39-1.03 0-1.42z"/></svg>
+    </span>
+    rawjulia
+  </button>
+  <div class="expand__content">
+    <h2 id="rawjulia">the raw julia code</h2>
+<p>The raw julia is shown below. These lines are actually run in julia but at the end we&rsquo;ll call it from R, so the code will be revisted at the end.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">f0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>## f0 (generic function with 1 method)
+</code></pre><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>## f1 (generic function with 1 method)
+</code></pre><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">x</span><span class="o">-</span><span class="n">f0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>## update (generic function with 1 method)
+</code></pre><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">function</span> <span class="n">getroot_julia</span><span class="p">()</span>
+  <span class="n">x</span><span class="o">=</span><span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">50000</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="n">x</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>## getroot_julia (generic function with 1 method)
+</code></pre><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-julia" data-lang="julia">
+
+<span class="k">using</span> <span class="n">BenchmarkTools</span>
+<span class="n">timing_julia</span> <span class="o">=</span> <span class="nd">@benchmark</span> <span class="n">getroot_julia</span><span class="p">()</span> <span class="n">samples</span><span class="o">=</span><span class="mi">5</span> <span class="n">evals</span><span class="o">=</span><span class="mi">5</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>## BenchmarkTools.Trial: 
+##   memory estimate:  0 bytes
+##   allocs estimate:  0
+##   --------------
+##   minimum time:     1.024 ms (0.00% GC)
+##   median time:      1.044 ms (0.00% GC)
+##   mean time:        1.042 ms (0.00% GC)
+##   maximum time:     1.053 ms (0.00% GC)
+##   --------------
+##   samples:          5
+##   evals/sample:     5
+</code></pre><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">print</span><span class="p">(</span><span class="n">timing_julia</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>## Trial(1.024 ms)
+</code></pre>
+  </div>
+</div></p>
 
 <div id="b0c0efc8659d6423" class="codetab">
   <div class="codetab__links">
@@ -2584,7 +2679,7 @@
 </code></pre></td></tr></table>
 </div>
 </div>
-<div id="ce7e5c3259bcef1c" class="codetab">
+<div id="acb785b326a03109" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">boxplot-base-r</button>
@@ -2594,7 +2689,7 @@
   </div>
   
   
-<div id="7db90d30ff02d374" class="codetab__content">
+<div id="d3155d0b8b351cdc" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2605,12 +2700,12 @@
 <span class="nf">boxplot</span><span class="p">(</span><span class="n">results</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="n">languages</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="/docs/2021-06-18-test-julia-thing/index.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div><p><img src="/docs/2021-06-18-test-julia-thing/index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 
 </div>
 
   
-<div id="6830a687ee47d3b5" class="codetab__content">
+<div id="a9fd8772563745e5" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2627,7 +2722,7 @@
 <span class="nf">autoplot</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img src="/docs/2021-06-18-test-julia-thing/index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div><p><img src="/docs/2021-06-18-test-julia-thing/index.en_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
 </div>
 
@@ -2636,7 +2731,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"ce7e5c3259bcef1c\"");
+  var containerId = JSON.parse("\"acb785b326a03109\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2680,13 +2775,13 @@
 </div>
 </div><pre><code>## Unit: milliseconds
 ##                           expr      min       lq      mean   median       uq
-##                    getroot_r() 7.936465 8.000910 10.843673 8.139050 8.404150
-##                  getroot_cpp() 1.707158 1.711611  1.895882 1.719499 1.964071
-##  julia_eval(&quot;getroot_julia()&quot;) 1.172063 1.202188 24.513607 1.302336 1.501026
-##        max neval
-##   21.73779     5
-##    2.37707     5
-##  117.39042     5
+##                    getroot_r() 8.330237 8.337684 11.577239 8.376558 8.799783
+##                  getroot_cpp() 1.842256 1.867353  2.062791 1.895371 1.903420
+##  julia_eval(&quot;getroot_julia()&quot;) 1.156166 1.185245 25.498659 1.327421 1.609942
+##         max neval
+##   24.041931     5
+##    2.805555     5
+##  122.214522     5
 </code></pre><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2704,7 +2799,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><pre><code>##         R       cpp     julia 
-## 1.0000000 0.2112653 0.1600108
+## 1.0000000 0.2262709 0.1584685
 </code></pre><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -2715,92 +2810,8 @@
 <span class="n">medians</span><span class="o">/</span><span class="nf">min</span><span class="p">(</span><span class="n">medians</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><pre><code>##        R      cpp    julia 
-## 6.249578 1.320319 1.000000
-</code></pre><h2 id="rawjulia">the raw julia code</h2>
-<p>The raw julia is shown below. These lines are actually run in julia but at the end we&rsquo;ll call it from R, so the code will be revisted at the end.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">f0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><pre><code>## f0 (generic function with 1 method)
-</code></pre><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><pre><code>## f1 (generic function with 1 method)
-</code></pre><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">=</span><span class="n">x</span><span class="o">-</span><span class="n">f0</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><pre><code>## update (generic function with 1 method)
-</code></pre><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="k">function</span> <span class="n">getroot_julia</span><span class="p">()</span>
-  <span class="n">x</span><span class="o">=</span><span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">50000</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">end</span>
-    <span class="k">return</span> <span class="n">x</span>
-<span class="k">end</span>
-</code></pre></td></tr></table>
-</div>
-</div><pre><code>## getroot_julia (generic function with 1 method)
-</code></pre><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-julia" data-lang="julia">
-
-<span class="k">using</span> <span class="n">BenchmarkTools</span>
-<span class="n">timing_julia</span> <span class="o">=</span> <span class="nd">@benchmark</span> <span class="n">getroot_julia</span><span class="p">()</span> <span class="n">samples</span><span class="o">=</span><span class="mi">5</span> <span class="n">evals</span><span class="o">=</span><span class="mi">5</span>
-</code></pre></td></tr></table>
-</div>
-</div><pre><code>## BenchmarkTools.Trial: 
-##   memory estimate:  0 bytes
-##   allocs estimate:  0
-##   --------------
-##   minimum time:     1.021 ms (0.00% GC)
-##   median time:      1.033 ms (0.00% GC)
-##   mean time:        1.036 ms (0.00% GC)
-##   maximum time:     1.071 ms (0.00% GC)
-##   --------------
-##   samples:          5
-##   evals/sample:     5
-</code></pre><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-julia" data-lang="julia"><span class="n">print</span><span class="p">(</span><span class="n">timing_julia</span><span class="p">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><pre><code>## Trial(1.021 ms)
+</div><pre><code>##       R     cpp   julia 
+## 6.31040 1.42786 1.00000
 </code></pre>
   </article>
 </div>
@@ -2846,7 +2857,6 @@
     </li>
     <li><a href="#the-code">the code</a></li>
     <li><a href="#results">results</a></li>
-    <li><a href="#rawjulia">the raw julia code</a></li>
   </ul>
 </nav>
   </div>

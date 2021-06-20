@@ -34,7 +34,29 @@ curve(exp(x)+sin(x),-1,0)
 
 We'll run the code a fixed number of iterations. I don't know if hitting 0 in the numerator does any short-cutting in any language but thats ok for now.
 
-Note that the julia code will be called within r (just like the rcpp is). For completeness the pure julia code is <a href="#rawjulia"> in the raw julia code </a>.
+Note that the julia code will be called within r (just like the rcpp is). For completeness the pure julia code is collapsed below.
+{{< expand "rawjulia" >}}
+## the raw julia code {#rawjulia}
+The raw julia is shown below. These lines are actually run in julia but at the end we'll call it from R, so the code will be revisted at the end.
+
+```{julia}
+f0(x)=exp(x)+sin(x)
+f1(x)=exp(x)+cos(x)
+update(x)=x-f0(x)/f1(x)
+function getroot_julia()
+  x=0.0
+    for i in 1:50000
+        x=update(x)
+    end
+    return x
+end
+
+
+using BenchmarkTools
+timing_julia = @benchmark getroot_julia() samples=5 evals=5
+print(timing_julia)
+```
+{{< /expand >}}
 
 
 {{< codes r cpp julia >}}
@@ -139,24 +161,3 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   
 
 
-
-## the raw julia code {#rawjulia}
-The raw julia is shown below. These lines are actually run in julia but at the end we'll call it from R, so the code will be revisted at the end.
-
-```{julia}
-f0(x)=exp(x)+sin(x)
-f1(x)=exp(x)+cos(x)
-update(x)=x-f0(x)/f1(x)
-function getroot_julia()
-  x=0.0
-    for i in 1:50000
-        x=update(x)
-    end
-    return x
-end
-
-
-using BenchmarkTools
-timing_julia = @benchmark getroot_julia() samples=5 evals=5
-print(timing_julia)
-```

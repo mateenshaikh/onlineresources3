@@ -33,7 +33,79 @@ curve(exp(x)+sin(x),-1,0)
 
 We'll run the code a fixed number of iterations. I don't know if hitting 0 in the numerator does any short-cutting in any language but thats ok for now.
 
-Note that the julia code will be called within r (just like the rcpp is). For completeness the pure julia code is <a href="#rawjulia"> in the raw julia code </a>.
+Note that the julia code will be called within r (just like the rcpp is). For completeness the pure julia code is collapsed below.
+{{< expand "rawjulia" >}}
+## the raw julia code {#rawjulia}
+The raw julia is shown below. These lines are actually run in julia but at the end we'll call it from R, so the code will be revisted at the end.
+
+
+```julia
+f0(x)=exp(x)+sin(x)
+```
+
+```
+## f0 (generic function with 1 method)
+```
+
+```julia
+f1(x)=exp(x)+cos(x)
+```
+
+```
+## f1 (generic function with 1 method)
+```
+
+```julia
+update(x)=x-f0(x)/f1(x)
+```
+
+```
+## update (generic function with 1 method)
+```
+
+```julia
+function getroot_julia()
+  x=0.0
+    for i in 1:50000
+        x=update(x)
+    end
+    return x
+end
+```
+
+```
+## getroot_julia (generic function with 1 method)
+```
+
+```julia
+
+
+using BenchmarkTools
+timing_julia = @benchmark getroot_julia() samples=5 evals=5
+```
+
+```
+## BenchmarkTools.Trial: 
+##   memory estimate:  0 bytes
+##   allocs estimate:  0
+##   --------------
+##   minimum time:     1.024 ms (0.00% GC)
+##   median time:      1.044 ms (0.00% GC)
+##   mean time:        1.042 ms (0.00% GC)
+##   maximum time:     1.053 ms (0.00% GC)
+##   --------------
+##   samples:          5
+##   evals/sample:     5
+```
+
+```julia
+print(timing_julia)
+```
+
+```
+## Trial(1.024 ms)
+```
+{{< /expand >}}
 
 
 {{< codes r cpp julia >}}
@@ -153,7 +225,7 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   boxplot(results,names=languages)
   ```
   
-  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" />
     {{< /code >}}
 
   {{< code >}}
@@ -166,7 +238,7 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   autoplot(df)
   ```
   
-  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+  <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-8-1.png" width="672" />
   {{< /code >}}
 {{< /codes >}}
 
@@ -179,13 +251,13 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   ```
   ## Unit: milliseconds
   ##                           expr      min       lq      mean   median       uq
-  ##                    getroot_r() 7.936465 8.000910 10.843673 8.139050 8.404150
-  ##                  getroot_cpp() 1.707158 1.711611  1.895882 1.719499 1.964071
-  ##  julia_eval("getroot_julia()") 1.172063 1.202188 24.513607 1.302336 1.501026
-  ##        max neval
-  ##   21.73779     5
-  ##    2.37707     5
-  ##  117.39042     5
+  ##                    getroot_r() 8.330237 8.337684 11.577239 8.376558 8.799783
+  ##                  getroot_cpp() 1.842256 1.867353  2.062791 1.895371 1.903420
+  ##  julia_eval("getroot_julia()") 1.156166 1.185245 25.498659 1.327421 1.609942
+  ##         max neval
+  ##   24.041931     5
+  ##    2.805555     5
+  ##  122.214522     5
   ```
   
   ```r
@@ -198,7 +270,7 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   
   ```
   ##         R       cpp     julia 
-  ## 1.0000000 0.2112653 0.1600108
+  ## 1.0000000 0.2262709 0.1584685
   ```
   
   ```r
@@ -207,80 +279,9 @@ results = microbenchmark(getroot_r(),getroot_cpp(),julia_eval("getroot_julia()")
   ```
   
   ```
-  ##        R      cpp    julia 
-  ## 6.249578 1.320319 1.000000
+  ##       R     cpp   julia 
+  ## 6.31040 1.42786 1.00000
   ```
   
 
 
-
-## the raw julia code {#rawjulia}
-The raw julia is shown below. These lines are actually run in julia but at the end we'll call it from R, so the code will be revisted at the end.
-
-
-```julia
-f0(x)=exp(x)+sin(x)
-```
-
-```
-## f0 (generic function with 1 method)
-```
-
-```julia
-f1(x)=exp(x)+cos(x)
-```
-
-```
-## f1 (generic function with 1 method)
-```
-
-```julia
-update(x)=x-f0(x)/f1(x)
-```
-
-```
-## update (generic function with 1 method)
-```
-
-```julia
-function getroot_julia()
-  x=0.0
-    for i in 1:50000
-        x=update(x)
-    end
-    return x
-end
-```
-
-```
-## getroot_julia (generic function with 1 method)
-```
-
-```julia
-
-
-using BenchmarkTools
-timing_julia = @benchmark getroot_julia() samples=5 evals=5
-```
-
-```
-## BenchmarkTools.Trial: 
-##   memory estimate:  0 bytes
-##   allocs estimate:  0
-##   --------------
-##   minimum time:     1.021 ms (0.00% GC)
-##   median time:      1.033 ms (0.00% GC)
-##   mean time:        1.036 ms (0.00% GC)
-##   maximum time:     1.071 ms (0.00% GC)
-##   --------------
-##   samples:          5
-##   evals/sample:     5
-```
-
-```julia
-print(timing_julia)
-```
-
-```
-## Trial(1.021 ms)
-```

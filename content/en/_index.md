@@ -57,7 +57,7 @@ sections:
     title: Current website sections
     width: 220
   type: card
-title: Z Themes
+title: home
 ---
 redirecting
 <meta http-equiv="refresh" content="0; URL='https://mateenshaikh3.netlify.app/docs/'" />
