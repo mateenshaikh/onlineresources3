@@ -3,7 +3,7 @@ date: "2020-01-26T04:15:05+09:00"
 description: Hugo zzo, zdoc theme documentation home page
 draft: false
 landing:
-  height: 300
+  height: 500
   image: favicon/android-icon-192x192.png
   title:
     - ms
@@ -11,7 +11,7 @@ landing:
     - website that's hopefully easy to work with
   titleColor:
   textColor:
-  spaceBetweenTitleText: 20
+  spaceBetweenTitleText: 25
   buttons:
     - link: docs
       text: docs
