@@ -364,10 +364,24 @@ pre code {
 <ul>
 <li>Geekdoc but it required (this approach)[<a href="https://stackoverflow.com/questions/65702805/geekdocs-hugo-template-not-compatible-with-blogdown" class="uri">https://stackoverflow.com/questions/65702805/geekdocs-hugo-template-not-compatible-with-blogdown</a>] suggested Yihui.</li>
 <li>Learn (works out of the box)</li>
+<li>zdoc/zzo.</li>
 </ul>
 </div>
 <div id="issues-you-might-have-depending-on-your-theme" class="section level2">
 <h2>Issues you might have depending on your theme</h2>
+<div id="zdoczzo-theme-menu" class="section level3">
+<h3>Zdoc/Zzo theme menu</h3>
+<p>Update</p>
+<ul>
+<li>folders in /content/en/ so they match what’s in menus.en.toml (see below)</li>
+<li>file config/_default/menus.en.toml</li>
+</ul>
+<pre class="toml"><code>  [[main]]
+  identifier = &quot;docs&quot;  #should be unique
+  name = &quot;Docs&quot;        #name that appears in the menu
+  url = &quot;docs&quot;         #folder name in /content/en/
+  weight = 1           #location, lower=left</code></pre>
+</div>
 <div id="math-wont-render-just-shows-the-latex" class="section level3">
 <h3>Math won’t render (just shows the LaTeX)</h3>
 <p>If the theme doesn’t render mathjax out of the box go into the folder themes/<themename>/layouts/partials/ and find something that’ll always render like head.html or foot.html. At the end of the file after the <code>&lt;/html&gt;</code> add</p>
