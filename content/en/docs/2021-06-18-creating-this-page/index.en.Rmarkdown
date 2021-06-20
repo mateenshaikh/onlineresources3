@@ -26,8 +26,22 @@ Search for a Hugo theme that you want. The bookdown documentation recommends som
 
 - Geekdoc but it required (this approach)[https://stackoverflow.com/questions/65702805/geekdocs-hugo-template-not-compatible-with-blogdown] suggested Yihui.
 - Learn (works out of the box)
+- zdoc/zzo.
 
 ## Issues you might have depending on your theme
+
+### Zdoc/Zzo theme menu
+  Update 
+  
+  - folders in /content/en/ so they match what's in menus.en.toml (see below)
+  - file config/_default/menus.en.toml
+```toml
+  [[main]]
+  identifier = "docs"  #should be unique
+  name = "Docs"        #name that appears in the menu
+  url = "docs"         #folder name in /content/en/
+  weight = 1           #location, lower=left
+```
 
 ### Math won't render (just shows the LaTeX)
 

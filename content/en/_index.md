@@ -2,132 +2,41 @@
 date: "2020-01-26T04:15:05+09:00"
 description: Hugo zzo, zdoc theme documentation home page
 draft: false
-footer:
-  contents:
-    align: left
-    applySinglePageCss: false
-    markdown: |
-      ## Zzo docs
-      Copyright © 2020. All rights reserved.
-  sections:
-  - links:
-    - link: https://gohugo.io/
-      title: Docs
-    - link: https://gohugo.io/
-      title: Learn
-    - link: https://gohugo.io/
-      title: Showcase
-    - link: https://gohugo.io/
-      title: Blog
-    title: General
-  - links:
-    - link: https://gohugo.io/
-      title: GitHub
-    - link: https://gohugo.io/
-      title: Releases
-    - link: https://gohugo.io/
-      title: Spectrum
-    - link: https://gohugo.io/
-      title: Telemetry
-    title: resources
-  - links:
-    - link: https://gohugo.io/
-      title: GitHub
-    - link: https://gohugo.io/
-      title: Releases
-    - link: https://gohugo.io/
-      title: Spectrum
-    - link: https://gohugo.io/
-      title: Telemetry
-    title: Features
-landing:
-  buttons:
-  - color: primary
-    link: docs
-    text: HUGO THEME ZDOC
-  height: 500
-  image: favicon/android-icon-192x192.png
-  spaceBetweenTitleText: 25
-  text:
-  - This is Hugo Z Themes documentation site
-  textColor: null
-  title:
-  - Z Themes
-  titleColor: null
 sections:
 - bgcolor: teal
   cards:
   - button:
       bgcolor: '#283593'
       color: white
-      link: https://gohugo.io/
-      name: Naver
+      link: docs
+      name: docs
       size: large
       target: _blank
     color: white
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-      eleifend erat. Integer eget mattis augue.
+    description: Documentation in stats and coding
     image: images/section/keyboard.png
-    subtitle: Performance
+    subtitle: Reference
     subtitlePosition: center
   - button:
       bgcolor: '#283593'
       color: white
-      link: https://gohugo.io/
-      name: Google
+      link: notes
+      name: Notes
       size: large
       target: _blank
     color: white
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-      eleifend erat. Integer eget mattis augue. Suspendisse semper laoreet tortor
-      sed convallis. Nulla ac euismod lorem
-    image: images/section/processor.png
-    subtitle: Reliability
-    subtitlePosition: center
-  - button:
-      bgcolor: '#283593'
-      color: white
-      link: https://gohugo.io/
-      name: Yahoo
-      size: large
-      target: _blank
-    color: white
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-      eleifend erat. Integer eget mattis augue. Suspendisse semper laoreet tortor
-      sed convallis. Nulla ac euismod lorem
+    description: More material that's closer to class notes. Expect this to be more empty.
     image: images/section/root-server.png
-    subtitle: Productivity
+    subtitle: Notes
     subtitlePosition: center
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eleifend
-    erat. Integer eget mattis augue. Suspendisse semper laoreet tortor sed convallis.
-    Nulla ac euismod lorem
+  description: Something clever will go here eventually
   header:
     color: '#fff'
     fontSize: 32
-    hlcolor: '#8bc34a'
-    title: Why Zdoc
+#    hlcolor: '#8bc34a'
+    title: Current website sections
     width: 220
   type: card
-- bgcolor: DarkSlateBlue
-  body:
-    color: white
-    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-      eleifend erat. Integer eget mattis augue. Suspendisse semper laoreet tortor
-      sed convallis. Nulla ac euismod lorem
-    image: images/section/root-server.png
-    imagePosition: left
-    subtitle: Extensible and customizable.
-    subtitlePosition: left
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eleifend
-    erat. Integer eget mattis augue. Suspendisse semper laoreet tortor sed convallis.
-    Nulla ac euismod lorem
-  header:
-    color: '#fff'
-    fontSize: 32
-    hlcolor: DarkKhaki
-    title: Build it with Zdoc
-    width: 340
-  type: normal
 title: Z Themes
 ---
 redirecting

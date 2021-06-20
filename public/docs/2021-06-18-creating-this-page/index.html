@@ -1683,23 +1683,7 @@
   
   
   <li class="navbar__menu--mobile-item ">
-    <a href="/updates" class="">Updates</a>
-  </li>
-
-  
-  
-  
-  
-  <li class="navbar__menu--mobile-item ">
-    <a href="/blog" class="">Blog</a>
-  </li>
-
-  
-  
-  
-  
-  <li class="navbar__menu--mobile-item ">
-    <a href="/posts" class="">Posts</a>
+    <a href="/notes" class="">Notes</a>
   </li>
 
   </ul>
@@ -1721,23 +1705,7 @@
   
   
   <li class="navbar__menu--item ">
-    <a href="/updates" data-bgimg="false">Updates</a>
-  </li>
-
-  
-  
-  
-  
-  <li class="navbar__menu--item ">
-    <a href="/blog" data-bgimg="false">Blog</a>
-  </li>
-
-  
-  
-  
-  
-  <li class="navbar__menu--item ">
-    <a href="/posts" data-bgimg="false">Posts</a>
+    <a href="/notes" data-bgimg="false">Notes</a>
   </li>
 
           </ul>
@@ -2425,9 +2393,32 @@
 <ul>
 <li>Geekdoc but it required (this approach)[https://stackoverflow.com/questions/65702805/geekdocs-hugo-template-not-compatible-with-blogdown] suggested Yihui.</li>
 <li>Learn (works out of the box)</li>
+<li>zdoc/zzo.</li>
 </ul>
 <h2 id="issues-you-might-have-depending-on-your-theme">Issues you might have depending on your theme</h2>
-<h3 id="math-wont-render-just-shows-the-latex">Math won&rsquo;t render (just shows the LaTeX)</h3>
+<h3 id="zdoczzo-theme-menu">Zdoc/Zzo theme menu</h3>
+<p>Update</p>
+<ul>
+<li>folders in /content/en/ so they match what&rsquo;s in menus.en.toml (see below)</li>
+<li>file config/_default/menus.en.toml</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml">  <span class="p">[[</span><span class="nx">main</span><span class="p">]]</span>
+  <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;docs&#34;</span>  <span class="c">#should be unique</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Docs&#34;</span>        <span class="c">#name that appears in the menu</span>
+  <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;docs&#34;</span>         <span class="c">#folder name in /content/en/</span>
+  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>           <span class="c">#location, lower=left</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="math-wont-render-just-shows-the-latex">Math won&rsquo;t render (just shows the LaTeX)</h3>
 <p>If the theme doesn&rsquo;t render mathjax out of the box go into the folder themes/<themename>/layouts/partials/ and find something that&rsquo;ll always render like head.html or foot.html. At the end of the file after the <code>&lt;/html&gt;</code> add</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2521,6 +2512,7 @@
     <li><a href="#themes">Themes</a></li>
     <li><a href="#issues-you-might-have-depending-on-your-theme">Issues you might have depending on your theme</a>
       <ul>
+        <li><a href="#zdoczzo-theme-menu">Zdoc/Zzo theme menu</a></li>
         <li><a href="#math-wont-render-just-shows-the-latex">Math won&rsquo;t render (just shows the LaTeX)</a></li>
         <li><a href="#plots-from-r-arent-showing-up">Plots from R aren&rsquo;t showing up</a></li>
         <li><a href="#code-highlighting">Code highlighting</a></li>
