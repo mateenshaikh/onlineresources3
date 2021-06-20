@@ -2,6 +2,26 @@
 date: "2020-01-26T04:15:05+09:00"
 description: Hugo zzo, zdoc theme documentation home page
 draft: false
+landing:
+  height: 300
+  image: favicon/android-icon-192x192.png
+  title:
+    - ms
+  text:
+    - website that's hopefully easy to work with
+  titleColor:
+  textColor:
+  spaceBetweenTitleText: 20
+  buttons:
+    - link: docs
+      text: docs
+      color: primary
+    - link: notes
+      text: notes
+      color: default
+  # backgroundImage: 
+  #   src: images/landscape.jpg
+  #   height: 300
 sections:
 - bgcolor: teal
   cards:
