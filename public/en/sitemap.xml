@@ -8,6 +8,21 @@
   </url>
   
   <url>
+    <loc>/updates/2019_may/</loc>
+    <lastmod>2020-01-28T00:10:51+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/updates/2019_may/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/updates/2019_may/"
+                />
+  </url>
+  
+  <url>
     <loc>/docs/gettingstarted/basicusage/</loc>
     <lastmod>2020-01-28T00:34:51+09:00</lastmod>
     <xhtml:link
@@ -25,6 +40,21 @@
   <url>
     <loc>/notes/2019_april/</loc>
     <lastmod>2020-01-28T00:10:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/updates/2019_april/</loc>
+    <lastmod>2020-01-28T00:10:48+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/updates/2019_april/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/updates/2019_april/"
+                />
   </url>
   
   <url>
@@ -48,6 +78,21 @@
   </url>
   
   <url>
+    <loc>/updates/2019_march/</loc>
+    <lastmod>2020-01-28T00:10:42+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/updates/2019_march/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/updates/2019_march/"
+                />
+  </url>
+  
+  <url>
     <loc>/docs/gettingstarted/installation/</loc>
     <lastmod>2020-01-28T00:34:13+09:00</lastmod>
     <xhtml:link
@@ -68,6 +113,21 @@
   </url>
   
   <url>
+    <loc>/updates/2019_february/</loc>
+    <lastmod>2020-01-28T00:10:37+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/updates/2019_february/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/updates/2019_february/"
+                />
+  </url>
+  
+  <url>
     <loc>/docs/gettingstarted/quickstart/</loc>
     <lastmod>2020-01-28T00:34:41+09:00</lastmod>
     <xhtml:link
@@ -85,6 +145,21 @@
   <url>
     <loc>/notes/2019_january/</loc>
     <lastmod>2020-01-28T00:10:09+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/updates/2019_january/</loc>
+    <lastmod>2020-01-28T00:10:09+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/updates/2019_january/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/updates/2019_january/"
+                />
   </url>
   
   <url>
@@ -160,41 +235,6 @@
   <url>
     <loc>/docs/2021-06-18-test-julia-thing/</loc>
     <lastmod>2021-06-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/blog/"
-                />
-  </url>
-  
-  <url>
-    <loc>/blog/2020-12-01-r-rmarkdown/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/plot/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r-markdown/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/regression/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url>
   
   <url>
@@ -308,6 +348,21 @@
   </url>
   
   <url>
+    <loc>/updates/</loc>
+    <lastmod>2020-01-28T00:08:29+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/updates/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/updates/"
+                />
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2020-01-26T04:15:05+09:00</lastmod>
     <xhtml:link
@@ -334,6 +389,21 @@
                 rel="alternate"
                 hreflang="en"
                 href="/docs/"
+                />
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="/ko/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/blog/"
                 />
   </url>
   
