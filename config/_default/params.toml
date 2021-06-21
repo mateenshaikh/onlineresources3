@@ -1,4 +1,4 @@
-logo = true
+logo = false
 logoText = "ms"
 logoType = "short" # long, short
 description = "ms site"

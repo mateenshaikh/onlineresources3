@@ -1,3 +1,5 @@
 ---
 site: blogdown:::blogdown_site
 ---
+redirecting
+<meta http-equiv="refresh" content="0; URL='docs/'" />
