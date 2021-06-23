@@ -1,5 +1,5 @@
 ---
-title: acknowledgements_territorial
+title: Territorial
 author: ''
 date: '2021-06-22'
 slug: []

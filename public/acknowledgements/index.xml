@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Updates on menu</title>
+    <link>/acknowledgements/</link>
+    <description>Recent content in Updates on menu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:08:29 +0900</lastBuildDate>
+    
+        <atom:link href="/acknowledgements/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Site</title>
+        <link>/acknowledgements/2021-06-22-site/</link>
+        <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/acknowledgements/2021-06-22-site/</guid>
+        <description>Technical Acknowledgements</description>
+      </item>
+      
+      <item>
+        <title>Territorial</title>
+        <link>/acknowledgements/2021-06-22-territorial/</link>
+        <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/acknowledgements/2021-06-22-territorial/</guid>
+        <description>Territorial acknowledgements.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

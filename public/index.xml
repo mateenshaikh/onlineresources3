@@ -24,15 +24,6 @@
       </item>
       
       <item>
-        <title>May 2019</title>
-        <link>/updates/2019_may/</link>
-        <pubDate>Tue, 28 Jan 2020 00:10:51 +0900</pubDate>
-        
-        <guid>/updates/2019_may/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
         <title>Basic Usage</title>
         <link>/docs/gettingstarted/basicusage/</link>
         <pubDate>Tue, 28 Jan 2020 00:34:51 +0900</pubDate>
@@ -62,15 +53,6 @@ The bar has a listed set of Depth X folders to show how to create nested element
       </item>
       
       <item>
-        <title>April 2019</title>
-        <link>/updates/2019_april/</link>
-        <pubDate>Tue, 28 Jan 2020 00:10:48 +0900</pubDate>
-        
-        <guid>/updates/2019_april/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
         <title>March 2019</title>
         <link>/notes/2019_march/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:42 +0900</pubDate>
@@ -80,29 +62,11 @@ The bar has a listed set of Depth X folders to show how to create nested element
       </item>
       
       <item>
-        <title>March 2019</title>
-        <link>/updates/2019_march/</link>
-        <pubDate>Tue, 28 Jan 2020 00:10:42 +0900</pubDate>
-        
-        <guid>/updates/2019_march/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
         <title>February 2019</title>
         <link>/notes/2019_february/</link>
         <pubDate>Tue, 28 Jan 2020 00:10:37 +0900</pubDate>
         
         <guid>/notes/2019_february/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>February 2019</title>
-        <link>/updates/2019_february/</link>
-        <pubDate>Tue, 28 Jan 2020 00:10:37 +0900</pubDate>
-        
-        <guid>/updates/2019_february/</guid>
         <description>Markdown here</description>
       </item>
       
@@ -132,15 +96,6 @@ The file /config/_default/languages.</description>
         <pubDate>Tue, 28 Jan 2020 00:10:09 +0900</pubDate>
         
         <guid>/notes/2019_january/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>January 2019</title>
-        <link>/updates/2019_january/</link>
-        <pubDate>Tue, 28 Jan 2020 00:10:09 +0900</pubDate>
-        
-        <guid>/updates/2019_january/</guid>
         <description>Markdown here</description>
       </item>
       
@@ -181,17 +136,6 @@ The file /config/_default/languages.</description>
       </item>
       
       <item>
-        <title>Creating this site</title>
-        <link>/docs/2021-06-18-creating-this-page/</link>
-        <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
-        
-        <guid>/docs/2021-06-18-creating-this-page/</guid>
-        <description>This site is a combination of several tools including
- Hugo (static websites) Github Lots of things from the Yihui universe (blogdown, rmarkdown, etc.). I know, I know it&amp;rsquo;s RStudio. netlify (recommended by the above, but github pages works too)  Make sure that the blogdown package is updated. Update Hugo if you need to.
-Netlify Make sure you create the appropriate github repo to deploy from. There aren’t subdomains like github pages.</description>
-      </item>
-      
-      <item>
         <title>test julia thing</title>
         <link>/docs/2021-06-18-test-julia-thing/</link>
         <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
@@ -202,6 +146,24 @@ the function used The function is \(f_0(x)=e^x+\sin(x)\) so the newton update wo
 $$x\leftarrow x-\frac{f_0(x)}{f_1(x)}=x-\frac{e^x+sin(x)}{e^x+cos(x)}$$
 applied repeatedly. A graph of the curve is shown below. It&amp;rsquo;s already fairly linear so the function will hit the root very quickly but that&amp;rsquo;s ok.
 1  curve(exp(x)+sin(x),-1,0)   the code We&amp;rsquo;ll run the code a fixed number of iterations.</description>
+      </item>
+      
+      <item>
+        <title>Site</title>
+        <link>/acknowledgements/2021-06-22-site/</link>
+        <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/acknowledgements/2021-06-22-site/</guid>
+        <description>Technical Acknowledgements</description>
+      </item>
+      
+      <item>
+        <title>Territorial</title>
+        <link>/acknowledgements/2021-06-22-territorial/</link>
+        <pubDate>Tue, 22 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/acknowledgements/2021-06-22-territorial/</guid>
+        <description>Territorial acknowledgements.</description>
       </item>
       
       <item>

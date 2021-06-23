@@ -10,3 +10,9 @@
   url = "notes"
   weight = 2
 
+[[main]]
+  identifier = "acknowledgements"
+  name = "Acknowledgements"
+  url = "acknowledgements"
+  weight = 3
+

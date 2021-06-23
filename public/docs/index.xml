@@ -51,17 +51,6 @@
       </item>
       
       <item>
-        <title>Creating this site</title>
-        <link>/docs/2021-06-18-creating-this-page/</link>
-        <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
-        
-        <guid>/docs/2021-06-18-creating-this-page/</guid>
-        <description>This site is a combination of several tools including
- Hugo (static websites) Github Lots of things from the Yihui universe (blogdown, rmarkdown, etc.). I know, I know it&amp;rsquo;s RStudio. netlify (recommended by the above, but github pages works too)  Make sure that the blogdown package is updated. Update Hugo if you need to.
-Netlify Make sure you create the appropriate github repo to deploy from. There aren’t subdomains like github pages.</description>
-      </item>
-      
-      <item>
         <title>test julia thing</title>
         <link>/docs/2021-06-18-test-julia-thing/</link>
         <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
