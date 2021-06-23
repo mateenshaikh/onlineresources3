@@ -4,7 +4,7 @@ description: Hugo zzo, zdoc theme documentation home page
 draft: false
 landing:
   height: 500
-  image: favicon/math_lv4-80x80.jpg
+  image: favicon/customlogo_resize.png
   title:
     - ms
   text:

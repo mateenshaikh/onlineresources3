@@ -1074,8 +1074,8 @@
 
     <meta name="description" content="" />
 <meta name="keywords" content="">
-<meta name="created" content="2021-06-22T00:00:00&#43;0000">
-<meta name="modified" content="2021-06-22T00:00:00&#43;0000">
+<meta name="created" content="2021-06-18T00:00:00&#43;0000">
+<meta name="modified" content="2021-06-18T00:00:00&#43;0000">
 
 
 <meta property="og:site_name" content="menu">
@@ -1111,10 +1111,10 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "headline": "Site",
-    "datePublished": "2021-06-22T00:00:00Z",
-    "dateModified": "2021-06-22T00:00:00Z",
+    "datePublished": "2021-06-18T00:00:00Z",
+    "dateModified": "2021-06-18T00:00:00Z",
     "url" : "/acknowledgements/2021-06-22-site/",
-    "description": "Technical Acknowledgements",
+    "description": "This site is a combination of several tools including  Hugo (static websites) Github Lots of things from the Yihui universe (blogdown, rmarkdown, etc.). I know, I know …",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "/"
@@ -1680,7 +1680,105 @@
   
 
   <article class="single__contents" data-dir="ltr">
-    <p>Technical Acknowledgements</p>
+    <p>This site is a combination of several tools including</p>
+<ul>
+<li>Hugo (static websites)</li>
+<li>Github</li>
+<li>Lots of things from the Yihui universe (blogdown, rmarkdown, etc.). I know, I know it&rsquo;s RStudio.</li>
+<li>netlify (recommended by the above, but github pages works too)</li>
+</ul>
+<p>Make sure that the <code>blogdown</code> package is updated. Update Hugo if you need to.</p>
+<h2 id="netlify">Netlify</h2>
+<p>Make sure you create the appropriate github repo to deploy from. There aren’t subdomains like github pages.</p>
+<h2 id="themes">Themes</h2>
+<p>Search for a Hugo theme that you want. The bookdown documentation recommends some in particular but you can try your luck with another one, just make sure you do some googling to make it work. Some themes require a bit of tweaking to get working. The themes I liked were those for documentation (duh).</p>
+<ul>
+<li>Geekdoc but it required (this approach)[https://stackoverflow.com/questions/65702805/geekdocs-hugo-template-not-compatible-with-blogdown] suggested Yihui.</li>
+<li>Learn (works out of the box)</li>
+<li>zdoc/zzo.</li>
+</ul>
+<h2 id="issues-you-might-have-depending-on-your-theme">Issues you might have depending on your theme</h2>
+<h3 id="zdoczzo-theme-menu">Zdoc/Zzo theme menu</h3>
+<p>Update</p>
+<ul>
+<li>folders in /content/en/ so they match what&rsquo;s in menus.en.toml (see below)</li>
+<li>file config/_default/menus.en.toml</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml">  <span class="p">[[</span><span class="nx">main</span><span class="p">]]</span>
+  <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;docs&#34;</span>  <span class="c">#should be unique</span>
+  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Docs&#34;</span>        <span class="c">#name that appears in the menu</span>
+  <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;docs&#34;</span>         <span class="c">#folder name in /content/en/</span>
+  <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>           <span class="c">#location, lower=left</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="math-wont-render-just-shows-the-latex">Math won&rsquo;t render (just shows the LaTeX)</h3>
+<p>If the theme doesn&rsquo;t render mathjax out of the box go into the folder themes/<themename>/layouts/partials/ and find something that&rsquo;ll always render like head.html or foot.html. At the end of the file after the <code>&lt;/html&gt;</code> add</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-HTML" data-lang="HTML"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;//yihui.org/js/math-code.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span>
+<span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="plots-from-r-arent-showing-up">Plots from R aren&rsquo;t showing up</h3>
+<p>In the root, open <code>config.yaml</code></p>
+<p>If there&rsquo;s no <code>markup</code> header, add it in the correct spot with the following lines. If it&rsquo;s there, add the lines that are missing.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w"> 
+</span><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>If markup exists, put goldmark and everything under in the right spot, if goldmark exists put renderer and everything under in the right spot, etc.</p>
+<h3 id="code-highlighting">Code highlighting</h3>
+<p>Depending on the theme you have the code highlighting may not be great. You can configure it by again modifying ``config.yaml` and adding the following (subset) of necessarily lines</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-YAML" data-lang="YAML"><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">hl_Lines</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span><span class="w">    </span><span class="nt">lineNoStart</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">    </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="l">inline</span><span class="w">
+</span><span class="w">    </span><span class="nt">lineNumbersInTable</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l">monokai</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>The second last line is the oen you want: monokai is default. You can choose anything from the <a href="https://xyproto.github.io/splash/docs/all.html" target="_blank">Chroma style gallery</a>.</p>
 
   </article>
 </div>
@@ -1710,7 +1808,20 @@
         <div class="toc">
   <h6 class="toc__label">What&#39;s on this Page</h6>
   <div class="toc__body">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#netlify">Netlify</a></li>
+    <li><a href="#themes">Themes</a></li>
+    <li><a href="#issues-you-might-have-depending-on-your-theme">Issues you might have depending on your theme</a>
+      <ul>
+        <li><a href="#zdoczzo-theme-menu">Zdoc/Zzo theme menu</a></li>
+        <li><a href="#math-wont-render-just-shows-the-latex">Math won&rsquo;t render (just shows the LaTeX)</a></li>
+        <li><a href="#plots-from-r-arent-showing-up">Plots from R aren&rsquo;t showing up</a></li>
+        <li><a href="#code-highlighting">Code highlighting</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </div>
       
