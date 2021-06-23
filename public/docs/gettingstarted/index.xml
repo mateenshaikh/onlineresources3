@@ -20,25 +20,8 @@
         <pubDate>Tue, 28 Jan 2020 00:34:51 +0900</pubDate>
         
         <guid>/docs/gettingstarted/basicusage/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Configuration</title>
-        <link>/docs/gettingstarted/configuration/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:56 +0900</pubDate>
-        
-        <guid>/docs/gettingstarted/configuration/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Installation</title>
-        <link>/docs/gettingstarted/installation/</link>
-        <pubDate>Tue, 28 Jan 2020 00:34:13 +0900</pubDate>
-        
-        <guid>/docs/gettingstarted/installation/</guid>
-        <description>Markdown here</description>
+        <description>This theme is a little more involved, as my first extension. The recommendations on how to achieve things likely aren&amp;rsquo;t the most efficient all the time but hopefully they&amp;rsquo;ll get the job done.
+The bar has a listed set of Depth X folders to show how to create nested elements in the menu. It&amp;rsquo;s fairly straightforward when you look in the /content menu. Each folder needs a _index.md (which can be created by some other means) in order to render a page.</description>
       </item>
       
       <item>
@@ -47,7 +30,7 @@
         <pubDate>Tue, 28 Jan 2020 00:34:41 +0900</pubDate>
         
         <guid>/docs/gettingstarted/quickstart/</guid>
-        <description>Markdown here</description>
+        <description>To populate content quickly, you&amp;rsquo;ll have to look in /content folder and the appropriate subfolder. If you&amp;rsquo;re creating a new (sub)folder remember to create a new _index.md. If you have several pages in that folder they obviously won&amp;rsquo;t all be named this, but _index.md will be the page that loads when you click on the folder (from the crumbs), you don&amp;rsquo;t directly access it from the menu. If you copy other _index.</description>
       </item>
       
     

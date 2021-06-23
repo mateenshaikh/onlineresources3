@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>/docs/themconfiguration/basicusage/</loc>
+    <lastmod>2020-01-28T00:34:51+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/notes/2019_april/</loc>
     <lastmod>2020-01-28T00:10:48+09:00</lastmod>
   </url>
@@ -58,21 +63,6 @@
   </url>
   
   <url>
-    <loc>/docs/gettingstarted/configuration/</loc>
-    <lastmod>2020-01-28T00:34:56+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/gettingstarted/configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/gettingstarted/configuration/"
-                />
-  </url>
-  
-  <url>
     <loc>/notes/2019_march/</loc>
     <lastmod>2020-01-28T00:10:42+09:00</lastmod>
   </url>
@@ -89,21 +79,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/updates/2019_march/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/gettingstarted/installation/</loc>
-    <lastmod>2020-01-28T00:34:13+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/gettingstarted/installation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/gettingstarted/installation/"
                 />
   </url>
   
@@ -140,6 +115,11 @@
                 hreflang="en"
                 href="/docs/gettingstarted/quickstart/"
                 />
+  </url>
+  
+  <url>
+    <loc>/docs/themconfiguration/quickstart/</loc>
+    <lastmod>2020-01-28T00:34:41+09:00</lastmod>
   </url>
   
   <url>
@@ -208,7 +188,7 @@
   </url>
   
   <url>
-    <loc>/docs/depth1/ttttest/</loc>
+    <loc>/docs/depth1/test2/</loc>
     <lastmod>2020-01-30T00:38:25+09:00</lastmod>
   </url>
   
@@ -228,6 +208,11 @@
   </url>
   
   <url>
+    <loc>/docs/themconfiguration/</loc>
+    <lastmod>2020-01-28T00:34:39+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/2021-06-18-creating-this-page/</loc>
     <lastmod>2021-06-18T00:00:00+00:00</lastmod>
   </url>
@@ -238,108 +223,13 @@
   </url>
   
   <url>
-    <loc>/docs/relatedcontent/</loc>
-    <lastmod>2020-01-28T00:39:09+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/relatedcontent/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/relatedcontent/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/pageresources/</loc>
-    <lastmod>2020-01-28T00:39:06+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/pageresources/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/pageresources/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/pagebundles/</loc>
-    <lastmod>2020-01-28T00:38:59+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/pagebundles/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/pagebundles/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/contentfortmats/</loc>
-    <lastmod>2020-01-28T00:38:51+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/contentfortmats/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/contentfortmats/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/imageprocessing/</loc>
-    <lastmod>2020-01-28T00:38:48+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/imageprocessing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/imageprocessing/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/contentmanagement/shortcodes/</loc>
+    <loc>/docs/contentmanagement/coding/</loc>
     <lastmod>2020-01-28T00:36:19+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/contentmanagement/shortcodes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/contentmanagement/shortcodes/"
-                />
   </url>
   
   <url>
-    <loc>/docs/contentmanagement/frontmatter/</loc>
-    <lastmod>2020-01-28T00:36:14+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/contentmanagement/frontmatter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/contentmanagement/frontmatter/"
-                />
+    <loc>/docs/contentmanagement/math/</loc>
+    <lastmod>2020-01-28T00:36:19+09:00</lastmod>
   </url>
   
   <url>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme Configuration on menu</title>
+    <link>/docs/themconfiguration/</link>
+    <description>Recent content in Theme Configuration on menu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="/docs/themconfiguration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Basic Usage</title>
+        <link>/docs/themconfiguration/basicusage/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:51 +0900</pubDate>
+        
+        <guid>/docs/themconfiguration/basicusage/</guid>
+        <description>This theme is a little more involved, as my first extension. The recommendations on how to achieve things likely aren&amp;rsquo;t the most efficient all the time but hopefully they&amp;rsquo;ll get the job done.
+The bar has a listed set of Depth X folders to show how to create nested elements in the menu. It&amp;rsquo;s fairly straightforward when you look in the /content menu. Each folder needs a _index.md (which can be created by some other means) in order to render a page.</description>
+      </item>
+      
+      <item>
+        <title>TOML/YAML</title>
+        <link>/docs/themconfiguration/quickstart/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:41 +0900</pubDate>
+        
+        <guid>/docs/themconfiguration/quickstart/</guid>
+        <description>Most of the configuration is determined through files that are some flavour of markup language (TOML/YAML).
+The file /content/config.yaml has some of the settings for the page. Besides things like the title, you&amp;rsquo;re not going to want to modify this since it&amp;rsquo;s all very normal, rather than personal choices. Some exceptions are things like depth of table of contents, you can choose how deep you want that to go.
+The file /config/_default/languages.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

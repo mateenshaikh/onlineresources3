@@ -50,16 +50,6 @@
   <url>
     <loc>/ko/docs/gettingstarted/configuration/</loc>
     <lastmod>2020-01-28T00:34:56+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/gettingstarted/configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/gettingstarted/configuration/"
-                />
   </url>
   
   <url>
@@ -80,16 +70,6 @@
   <url>
     <loc>/ko/docs/gettingstarted/installation/</loc>
     <lastmod>2020-01-28T00:34:13+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/gettingstarted/installation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/gettingstarted/installation/"
-                />
   </url>
   
   <url>
@@ -170,106 +150,36 @@
   <url>
     <loc>/ko/docs/relatedcontent/</loc>
     <lastmod>2020-01-28T00:39:09+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/relatedcontent/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/relatedcontent/"
-                />
   </url>
   
   <url>
     <loc>/ko/docs/pageresources/</loc>
     <lastmod>2020-01-28T00:39:06+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/pageresources/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/pageresources/"
-                />
   </url>
   
   <url>
     <loc>/ko/docs/pagebundles/</loc>
     <lastmod>2020-01-28T00:38:59+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/pagebundles/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/pagebundles/"
-                />
   </url>
   
   <url>
     <loc>/ko/docs/contentfortmats/</loc>
     <lastmod>2020-01-28T00:38:51+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/contentfortmats/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/contentfortmats/"
-                />
   </url>
   
   <url>
     <loc>/ko/docs/imageprocessing/</loc>
     <lastmod>2020-01-28T00:38:48+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/imageprocessing/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/imageprocessing/"
-                />
   </url>
   
   <url>
     <loc>/ko/docs/contentmanagement/shortcodes/</loc>
     <lastmod>2020-01-28T00:36:19+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/contentmanagement/shortcodes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/contentmanagement/shortcodes/"
-                />
   </url>
   
   <url>
     <loc>/ko/docs/contentmanagement/frontmatter/</loc>
     <lastmod>2020-01-28T00:36:14+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/docs/contentmanagement/frontmatter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="/ko/docs/contentmanagement/frontmatter/"
-                />
   </url>
   
   <url>

@@ -42,6 +42,15 @@
       </item>
       
       <item>
+        <title>Theme Configuration</title>
+        <link>/docs/themconfiguration/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>/docs/themconfiguration/</guid>
+        <description></description>
+      </item>
+      
+      <item>
         <title>Creating this site</title>
         <link>/docs/2021-06-18-creating-this-page/</link>
         <pubDate>Fri, 18 Jun 2021 00:00:00 +0000</pubDate>
@@ -63,51 +72,6 @@ the function used The function is \(f_0(x)=e^x+\sin(x)\) so the newton update wo
 $$x\leftarrow x-\frac{f_0(x)}{f_1(x)}=x-\frac{e^x+sin(x)}{e^x+cos(x)}$$
 applied repeatedly. A graph of the curve is shown below. It&amp;rsquo;s already fairly linear so the function will hit the root very quickly but that&amp;rsquo;s ok.
 1  curve(exp(x)+sin(x),-1,0)   the code We&amp;rsquo;ll run the code a fixed number of iterations.</description>
-      </item>
-      
-      <item>
-        <title>Related content</title>
-        <link>/docs/relatedcontent/</link>
-        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
-        
-        <guid>/docs/relatedcontent/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Page Resources</title>
-        <link>/docs/pageresources/</link>
-        <pubDate>Tue, 28 Jan 2020 00:39:06 +0900</pubDate>
-        
-        <guid>/docs/pageresources/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Page Bundles</title>
-        <link>/docs/pagebundles/</link>
-        <pubDate>Tue, 28 Jan 2020 00:38:59 +0900</pubDate>
-        
-        <guid>/docs/pagebundles/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Content Formats</title>
-        <link>/docs/contentfortmats/</link>
-        <pubDate>Tue, 28 Jan 2020 00:38:51 +0900</pubDate>
-        
-        <guid>/docs/contentfortmats/</guid>
-        <description>Markdown here</description>
-      </item>
-      
-      <item>
-        <title>Image Processing</title>
-        <link>/docs/imageprocessing/</link>
-        <pubDate>Tue, 28 Jan 2020 00:38:48 +0900</pubDate>
-        
-        <guid>/docs/imageprocessing/</guid>
-        <description>Markdown here</description>
       </item>
       
     

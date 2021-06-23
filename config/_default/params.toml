@@ -1,9 +1,9 @@
-logo = false
+logo = true
 logoText = "ms"
 logoType = "short" # long, short
 description = "ms site"
 
-themeOptions = ["light", "dark"]
+themeOptions = ["light", "dark","solarized"]
 
 useFaviconGenerator = true # https://www.favicon-generator.org/
 

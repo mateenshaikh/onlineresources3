@@ -15,21 +15,26 @@
     
       
       <item>
-        <title>Shortcodes</title>
-        <link>/docs/contentmanagement/shortcodes/</link>
+        <title>Code</title>
+        <link>/docs/contentmanagement/coding/</link>
         <pubDate>Tue, 28 Jan 2020 00:36:19 +0900</pubDate>
         
-        <guid>/docs/contentmanagement/shortcodes/</guid>
-        <description>Markdown here</description>
+        <guid>/docs/contentmanagement/coding/</guid>
+        <description>Regular code The coolest thing (to me) about the original zdoc theme, is how the coding renders. A variety of common languages are included but not all of them. You can download more but it does bloat the site so only take the ones you think you&amp;rsquo;ll need to use. If you want to use (any) code and show it you&amp;rsquo;ll use the following template
+```language line of code 1 line of code 2 line of code 3 ```  if you specify a recognzied language, the appropriate syntax highlighting is used.</description>
       </item>
       
       <item>
-        <title>Frontmatter</title>
-        <link>/docs/contentmanagement/frontmatter/</link>
-        <pubDate>Tue, 28 Jan 2020 00:36:14 +0900</pubDate>
+        <title>Math</title>
+        <link>/docs/contentmanagement/math/</link>
+        <pubDate>Tue, 28 Jan 2020 00:36:19 +0900</pubDate>
         
-        <guid>/docs/contentmanagement/frontmatter/</guid>
-        <description>Markdown here</description>
+        <guid>/docs/contentmanagement/math/</guid>
+        <description>Within a markdown document, if you wish to enter simple math, just use code as if you were writing LaTeX code, so you can directly write
+1  The equation `\(y=\alpha^2\)` is a quadratic.   or
+1  The equation `$y=\alpha^2$` is quadratic.   for inline equations and
+1  The equation \[y=\alpha^2\] is quadratic.   or
+1  is quadratic. $$y=\alpha^2$$ is quadratic.   for standalone environments.</description>
       </item>
       
       <item>
