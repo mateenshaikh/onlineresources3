@@ -164,12 +164,85 @@
       }
     }
     
+    pre > code:not([class^=language]) {
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 2px 7px;
+        width: 100%;
+        height: 30px;
+        z-index: z('content');
+        line-height: 30px;
+        font-size: 13.8px;
+        font-family: $title-font;
+        font-weight: bold;
+        display: inline-block;
+        text-transform: capitalize;      
+        content: 'Code';
+
+        @include themify($codeblock) {
+          color: themed('content-pre-header-color');
+          background: themed('content-pre-header-background-color');
+        }
+      }
+    }
+
     p > code:not([class^=language]) {
       padding: 0.25rem 0.5rem;
       @include themify($codeblock) {
         color: themed('content-code-color');
         background-color: themed('content-code-background-color');
       }
+    }
+
+    code + .copy-to-clipboard {
+      position: absolute;
+      right: 4px;
+      top: 5px;
+      border-radius: 2px;
+      z-index: z('clipboard');
+      @include transition(all, 0.2s, ease);
+    }
+
+    .copy-to-clipboard {
+      background-position: 50% 50%;
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      width: 27px;
+      height: 1.45rem;
+      top: -1px;
+      vertical-align: middle;
+      position: relative;      
+      margin-left: -0.2rem;
+      cursor: pointer;
+      border-radius: 0 2px 2px 0;
+      margin-bottom: 1px;
+      opacity: 0;
+
+      @include clippy();
+      @include transition(all, 0.2s, ease);
+    }
+    .chroma .copy-to-clipboard {
+      position: absolute;
+      right: 4px;
+      top: 5px;      
+      border-radius: 2px;
+      z-index: z('clipboard');
+    }
+    .language-code .copy-to-clipboard {
+      position: absolute;
+      right: 2px;
+      top: 5px;      
+      border-radius: 2px;
+      z-index: z('clipboard');
+    }
+    .highlight > .copy-to-clipboard {
+      position: absolute;
+      right: 4px;
+      top: 5px;      
+      border-radius: 2px;
+      z-index: z('clipboard');
     }
 
     blockquote {
@@ -473,7 +546,7 @@ pre:not(.chroma) {
     &::after {
       position: absolute;
       top: 2px;
-      right: 0;
+      right: 30px;
       z-index: z('clipboard');
       padding: 0.125rem 0.25rem;
       height: 26px;
@@ -483,6 +556,7 @@ pre:not(.chroma) {
       line-height: 1.5;
       display: inline-block;
       border-top-left-radius: 0.2rem;
+      border-top-right-radius: 0.2rem;
       content: attr(data-lang);
 
       @include themify($themes) {
@@ -516,7 +590,7 @@ pre:not(.chroma) {
 
   /* LineNumbersTable */  
   .lnt {
-    margin-left: 0.2rem;
+    margin-left: 0.1rem;
     margin-right: 0.5rem;
     @include themify($codeblock) {
       color: themed('content-pre-number-color');
