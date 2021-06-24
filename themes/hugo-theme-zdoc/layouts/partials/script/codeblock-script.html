@@ -25,6 +25,9 @@
         elem.className = 'language-' + code;
         elem.setAttribute('data-lang', codeTitle);
         elem.setAttribute('id', codeTitle);
+      } else if (!dataLang) {
+        dataLangWrapper.setAttribute('data-lang', 'Code');
+        dataLangWrapper.className = 'language-code';
       }
 
       if (!dataLang || codeTitle) {
@@ -33,14 +36,22 @@
 
     }) : null;
   })();
+
+  var langCodeElem = document.querySelectorAll('.language-code');
+  langCodeElem ? langCodeElem.forEach(function (elem) {
+    var newElem = document.createElement('span');
+    newElem.className = 'copy-to-clipboard';
+    newElem.setAttribute('title', 'Copy to clipboard');
+    elem.append(newElem);
+  }) : null;
   // =================================================================
 
-
   
+
   // ================ codeblock line number to symbol ================
   var dollarCodeElem = document.querySelectorAll('div.language-\\$');
   var gtCodeElem = document.querySelectorAll('div.language-\\>');
-  
+
   dollarCodeElem ?
   dollarCodeElem.forEach(function(elem) {
     var lnts = elem.parentNode.parentNode ? elem.parentNode.parentNode.querySelectorAll('.lnt') : null;
