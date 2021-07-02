@@ -19,7 +19,7 @@ enableEditBtn = false
 enableToc = true
 enableMenu = true
 enableNavbar = true
-enableFooter = true
+enableFooter = false
 showPoweredBy = true
 
 tocLevels = ["h2", "h3", "h4"]
